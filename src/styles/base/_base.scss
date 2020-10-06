@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100vh;
+}
+
+.navbar ~ * {
+  padding-top: $height-navbar;
+}

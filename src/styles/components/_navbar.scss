@@ -1,0 +1,105 @@
+.navbar {
+  position: absolute;
+  width: 100%;
+  height: $height-navbar;
+  background-color: white;
+  @include flex-center(row);
+}
+
+.navbar__brand,
+.navbar__links {
+  width: 100%;
+  display: flex;
+}
+
+.navbar__brand {
+  justify-content: center;
+  font-size: 1.4em;
+  font-weight: 200;
+  font-style: italic;
+  @include hover-color($primary);
+}
+
+.navbar__links {
+  justify-content: space-around;
+  font-size: 1.1em;
+  font-weight: 300;
+  
+  a{
+    @include hover-color($primary);
+    color: black;
+    outline: none;
+    text-decoration: none;
+  }
+
+  .navbar__link-active{
+    color: $primary;
+  }
+}
+
+.navbar__more{
+  right: 0;
+  position: absolute;
+  display: none;
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 3em;
+}
+
+@media(max-width: 800px){
+
+  .navbar__more{
+    display: block;
+  }
+  .navbar__links{
+    font-size: 1.3em;
+    left: -100%;
+    position: absolute;
+    top: $height-navbar;
+    background-color: white;
+    height: 70vh;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+    opacity: 0;
+
+    a{
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .navbar__links-show{
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.navbar__menu-activador {
+  width: 30px;
+  height: 20px;
+  span {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;  
+    &.navbar__menu-abierto .navbar__menu-activador-linea {
+      &:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateY(-9px)rotate(-45deg);
+      }
+    }
+  }
+  .navbar__menu-activador-linea {
+    height: 2px;
+    background-color: #000;
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+    transition: all 0.3s;
+  }
+}
