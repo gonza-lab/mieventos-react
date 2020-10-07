@@ -1,3 +1,7 @@
 $primary: tan;
+$primary-tpze: transparentize(
+  $color: $primary,
+  $amount: 0.5,
+);
 
 $height-navbar: 70px;

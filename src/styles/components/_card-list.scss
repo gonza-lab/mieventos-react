@@ -1,0 +1,16 @@
+.card-list{
+  @include flex-center(column);
+
+  & > .card + .card{
+    margin-top: 100px;
+  }
+}
+
+@media(max-width: 800px){
+  .card-list{
+    & > .card + .card{
+      margin-top: 20px;
+    }
+  }
+}
+

@@ -1,0 +1,13 @@
+.home {
+  padding-top: 0;
+}
+
+.home > * + * {
+  margin-top: 100px;
+}
+
+@media(max-width: 800px){
+  .home > * + * {
+    margin-top: 30px;
+  }
+}

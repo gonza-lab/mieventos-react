@@ -4,7 +4,7 @@
 @import './base/mixin';
 
 @import './components/navbar';
-
-#root{
-  background-color: gray;
-}
+@import './components/home';
+@import './components/presentation';
+@import './components/card-list';
+@import './components/card';
