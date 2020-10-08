@@ -1,0 +1,19 @@
+footer{
+  width: 100%;
+  margin-bottom: 1em;
+  @include flex-center(row);
+
+  div{
+    @include flex-center(column);
+    width: 300px;
+    p{
+      font-weight: 200;
+      margin: 0.5em 0;
+    }
+  }
+
+  div + div{
+    border-left: 1px solid $primary-tpze;
+  }
+
+}

@@ -7,7 +7,7 @@ import { ContactoScreen } from '../components/contacto/ContactoScreen';
 import { GaleriaScreen } from '../components/galeria/GaleriaScreen';
 import { HomeScreen } from '../components/home/HomeScreen';
 import { ServiciosScreen } from '../components/servicios/ServiciosScreen';
-
+import { Footer } from '../components/footer/Footer';
 
 export const AppRouter = () => {
   return (
@@ -19,6 +19,7 @@ export const AppRouter = () => {
         <Route exact path="/contacto" component={ContactoScreen} />
         <Route path="/" component={HomeScreen} />
       </Switch>
+      <Footer />
     </Router>
   );
 };

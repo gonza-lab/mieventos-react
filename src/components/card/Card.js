@@ -1,4 +1,16 @@
 import React from 'react';
+import { Slider } from '../slider/Slider';
+
+const images = [
+  {
+    src: "https://lh3.googleusercontent.com/pw/ACtC-3fvFFHhmtDiIQGfMMeRO76M1v7mqVby5-WqPGqVIPXGjGHkdB3rgqxUvBBcB2o4X0CA6bul-GpAZtRuC9LWoBOnxqRABOnDGkgOW7pn6kCFjuHHJsI3LLBgbjTHA_STSy9FTSlHYVvAW81THMh1ELV8aw=w958-h639-no?authuser=0",
+    alt: "",
+  },
+  {
+    src: "https://lh3.googleusercontent.com/pw/ACtC-3dLq5zx1DaoUhPzS69FdVzcmk_w8optKD8Bmd1Gzbu6L48Yfxt_L0g2qE1Rnv8kkJBDlqcPZU5aC1di-V4h-r84sdlyLq_PzHR_wpAbuouiAp2K3MVWzuuKZ4rLP0TDgwjRJUkOaJ9BFxwvXrpSjzKbXg=w958-h639-no?authuser=0",
+    alt: "",
+  }
+]
 
 export const Card = () => {
   return (
@@ -13,8 +25,8 @@ export const Card = () => {
         </p>
       </div>
       <div className="card__img">
-        <img alt="" src="https://static.wixstatic.com/media/c19c76_6121251323844c63af2c0c66aaf00ab6~mv2_d_4288_2788_s_4_2.jpg/v1/fill/w_560,h_400,al_c,q_80,usm_0.66_1.00_0.01/c19c76_6121251323844c63af2c0c66aaf00ab6~mv2_d_4288_2788_s_4_2.webp" />
-      </div>
+          <Slider imgs={images} />
+       </div>
     </div>
   );
 };

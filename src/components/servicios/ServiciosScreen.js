@@ -1,9 +1,10 @@
 import React from 'react'
+import { Presentation } from './Presentation'
 
 export const ServiciosScreen = () => {
   return (
-    <div>
-      Patantalla de servicios
+    <div className="servicios-screen">
+     <Presentation />
     </div>
   )
 }
