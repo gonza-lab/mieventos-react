@@ -3,5 +3,7 @@ $primary-tpze: transparentize(
   $color: $primary,
   $amount: 0.5,
 );
+$primary-darken: darken($primary, 10);
+
 
 $height-navbar: 70px;

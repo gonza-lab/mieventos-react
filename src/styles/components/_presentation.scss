@@ -1,0 +1,29 @@
+.presentation {
+  height: 380px;
+  position: relative;
+  width: 95%;
+  background-color: $primary-tpze;
+  @include flex-center(column);
+
+  img {
+    position: absolute;
+    top: 50px;
+    height: 100%;
+    object-fit: cover;
+    max-width: 700px;
+    width: 100%;
+    z-index: 0;
+  }
+
+  p {
+    text-align: center;
+    position: relative;
+    top: 50px;
+    text-shadow: 0 0 2px black;
+    z-index: 0;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 2em;
+  }
+}

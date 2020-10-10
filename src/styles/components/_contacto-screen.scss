@@ -1,0 +1,8 @@
+.contacto-screen {
+  display: flex;
+  flex-direction: column;
+
+  > *:first-child {
+    margin-top: 100px;
+  }
+}

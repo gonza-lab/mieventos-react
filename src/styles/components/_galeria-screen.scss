@@ -1,0 +1,12 @@
+.galeria-screen{
+  @include flex-center(column);
+  justify-content: flex-start;
+
+  >*{
+    flex-shrink: 0;
+  }
+}
+
+.galeria-screen__galery-container{
+  width: 98%;
+}

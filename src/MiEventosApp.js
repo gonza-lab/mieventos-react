@@ -1,10 +1,13 @@
-import React from 'react'
-import { AppRouter } from './routers/AppRouter'
+import React from 'react';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { AppRouter } from './routers/AppRouter';
 
 export const MiEventosApp = () => {
   return (
     <>
-      <AppRouter />
+      <ParallaxProvider>
+        <AppRouter />
+      </ParallaxProvider>
     </>
-  )
-}
+  );
+};

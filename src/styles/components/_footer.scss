@@ -1,6 +1,9 @@
 footer{
+  position: relative;
+  z-index: 0;
   width: 100%;
   margin-bottom: 1em;
+  background-color: white;
   @include flex-center(row);
 
   div{
