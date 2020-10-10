@@ -5,7 +5,7 @@ footer{
   margin-bottom: 1em;
   background-color: white;
   @include flex-center(row);
-
+  
   div{
     @include flex-center(column);
     width: 300px;
@@ -14,9 +14,10 @@ footer{
       margin: 0.5em 0;
     }
   }
-
+  
   div + div{
     border-left: 1px solid $primary-tpze;
   }
-
+  
+  align-self: flex-end;
 }

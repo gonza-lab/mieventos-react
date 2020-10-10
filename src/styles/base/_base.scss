@@ -12,6 +12,11 @@ body,
   height: 100vh;
 }
 
+#root{
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar ~ * {
   padding-top: $height-navbar;
 }
