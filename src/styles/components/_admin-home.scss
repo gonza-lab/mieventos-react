@@ -1,0 +1,16 @@
+.admin-home{
+  width: 100%;
+
+  h1{
+    font-weight: 200;
+    padding-left: 16px;
+  }
+
+  overflow: auto;
+}
+
+.admin-home__card-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

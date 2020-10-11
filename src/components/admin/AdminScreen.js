@@ -1,16 +1,12 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { AdminRouter } from '../../routers/AdminRouter';
 import { Sidebar } from './Sidebar';
 
 export const AdminScreen = () => {
   return (
     <div className="admin-screen">
       <Sidebar />
-      <Switch>
-        <Route path="/admin/dashboard/home">
-          <div>Hola</div>
-        </Route>
-      </Switch>
+      <AdminRouter />
     </div>
   );
 };

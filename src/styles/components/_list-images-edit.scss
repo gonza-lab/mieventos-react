@@ -1,0 +1,32 @@
+.list-images-edit {
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid transparentize($color: #000000, $amount: 0.8);
+  border-radius: 5px;
+
+  li{
+    padding: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover{
+      text-decoration: line-through;
+    }
+  }
+
+  li + li {
+    border-top: 1px solid transparentize($color: #000000, $amount: 0.8);
+  }
+
+  .list-images-edit__add{
+    background-color: $green;
+    color: white;
+    border-color: $green;
+    border-radius: 0 0 4px 4px;
+
+    &:hover{
+      text-decoration: none;
+      background-color: darken($color: $green, $amount: 10);
+    }
+  }
+}

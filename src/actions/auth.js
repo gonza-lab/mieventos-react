@@ -21,9 +21,20 @@ export const loginWithEmailAndPassword = ({ email, password }) => {
   };
 };
 
+export const startLogOut = () => {
+  return async (dispatch) => {
+    await firebase.auth().signOut();
+    dispatch(logout());
+  };
+};
+
 export const login = (uid) => ({
   type: types.login,
   payload: {
     uid,
   },
+});
+
+export const logout = () => ({
+  type: types.logout,
 });
