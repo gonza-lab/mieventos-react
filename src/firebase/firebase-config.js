@@ -1,16 +1,8 @@
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import { firebaseConfig } from '../apikey';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyAAzXESaqwA5mGZdgtqWvEsaEPAWH4LuiU',
-  authDomain: 'mieventos-react.firebaseapp.com',
-  databaseURL: 'https://mieventos-react.firebaseio.com',
-  projectId: 'mieventos-react',
-  storageBucket: 'mieventos-react.appspot.com',
-  messagingSenderId: '1028502286403',
-  appId: '1:1028502286403:web:2d4fc404c38c7c0d4fe4f6',
-};
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
