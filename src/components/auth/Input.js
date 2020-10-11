@@ -6,6 +6,7 @@ export const Input = ({
   handleInputChange,
   value,
   name = '',
+  i,
 }) => {
   return (
     <label className="auth__input-item">
@@ -20,6 +21,7 @@ export const Input = ({
           onChange={(e) => handleInputChange(e)}
           required
         />
+        {i && <i className={i}></i>}
       </div>
     </label>
   );

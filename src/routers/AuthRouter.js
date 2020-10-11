@@ -20,7 +20,6 @@ export const AuthRouter = () => {
   const { logged } = auth;
   const { isGetting } = ui;
 
-  console.log(isGetting);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -40,7 +39,6 @@ export const AuthRouter = () => {
   ) : (
     <Switch>
       <PrivateRoute
-        exact
         condition={logged}
         path="/admin/dashboard"
         component={AdminScreen}

@@ -27,12 +27,14 @@ export const LoginScreen = () => {
               type="email"
               handleInputChange={handleInputChange}
               value={values.email}
+              i="fas fa-user"
             />
             <Input
               text="Password"
               type="password"
               handleInputChange={handleInputChange}
               value={values.password}
+              i="fas fa-envelope"
             />
           </div>
           <button type="submit" disabled={isLoading}>

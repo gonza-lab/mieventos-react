@@ -4,14 +4,16 @@
 @import './base/mixin';
 
 @import './components/navbar';
-@import './components/home';
 @import './components/card-list';
 @import './components/card';
 @import './components/footer';
 @import './components/slider';
 @import './components/loader';
 @import './components/presentation';
+
+@import './components/home';
 @import './components/servicios-screen';
 @import './components/galeria-screen';
 @import './components/contacto-screen';
 @import './components/auth-screen';
+@import './components/admin-screen';

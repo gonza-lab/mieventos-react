@@ -2,6 +2,9 @@
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+* {
   font-family: 'Roboto Slab', serif;
 }
 
@@ -12,7 +15,7 @@ body,
   height: 100vh;
 }
 
-#root{
+#root {
   display: flex;
   flex-direction: column;
 }
@@ -21,8 +24,8 @@ body,
   padding-top: $height-navbar;
 }
 
-@media(max-width: 800px){
-  :root{
+@media (max-width: 800px) {
+  :root {
     font-size: 12px;
   }
 }
