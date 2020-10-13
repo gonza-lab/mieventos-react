@@ -5,8 +5,8 @@
   width: 70%;
   margin: 1em 0;
 
-  > * + * {
-    margin: 0.8em 0;
+  form > * + * {
+    margin: 1.5em 0;
   }
 }
 
@@ -24,12 +24,52 @@
     outline: none;
     transition: box-shadow 0.3s;
 
-    &:focus{
-      box-shadow: 0 0 2px 4px transparentize($color: $primary-admin, $amount: 0.8);
+    &:focus {
+      box-shadow: 0 0 2px 4px
+        transparentize($color: $primary-admin, $amount: 0.8);
     }
   }
 
-  textarea{
+  textarea {
     resize: vertical;
+  }
+}
+
+.card-edit__buttons {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+
+    &:first-child {
+      background-color: $blue;
+      &:hover {
+        background-color: darken($color: $blue, $amount: 15);
+      }
+    }
+
+    &:last-child {
+      background-color: $red;
+      &:hover {
+        background-color: darken($color: $red, $amount: 15);
+      }
+    }
+  }
+}
+
+.card-edit__radio-group{
+  display: flex;
+  flex-direction: column;
+
+  > * + *{
+    margin-top: 10px;
   }
 }

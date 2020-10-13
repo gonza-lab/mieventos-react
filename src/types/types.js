@@ -6,4 +6,8 @@ export const types = {
   uiStartLoading: '[UI] Start Loading',
   uiStartGetUser: '[UI] Start getting user',
   uiFinishGetUser: '[UI] Finish getting user',
+
+  homeGetCards: '[HOME] Load cards',
+  homeAddCard: '[HOME] Add card',
+  homeSaveCard: '[HOME] Save card',
 };
