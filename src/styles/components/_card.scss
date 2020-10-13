@@ -41,9 +41,11 @@
 .card__reverse {
   .card__info {
     order: 2;
+    margin-left: 1em;
   }
   .card__img {
     order: 1;
+    margin-left: 0em;
   }
 }
 
