@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { startSaveCardFromHome } from '../../actions/home';
+import {
+  startDeleteCardFromHome,
+  startSaveCardFromHome,
+} from '../../actions/home';
 import { useForm } from '../../hooks/useForm';
 import { ListImagesEdit } from '../list-images/ListImagesEdit';
 
@@ -12,6 +15,10 @@ export const CardEdit = ({ titulo, informacion, imagenes, lado, id }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(startSaveCardFromHome(id, { ...values, imagenes: listImages }));
+  };
+
+  const handleDeleteCard = () => {
+    dispatch(startDeleteCardFromHome(id));
   };
 
   return (
@@ -62,7 +69,9 @@ export const CardEdit = ({ titulo, informacion, imagenes, lado, id }) => {
         </div>
         <div className="card-edit__buttons">
           <button type="submit">Guardar</button>
-          <button>Eliminar</button>
+          <button type="button" onClick={handleDeleteCard}>
+            Eliminar
+          </button>
         </div>
       </form>
     </div>

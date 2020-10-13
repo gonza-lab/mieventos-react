@@ -24,6 +24,18 @@ export const homeReducer = (state = { cards: [] }, action) => {
         ),
       };
 
+    case types.homeDeleteCard:
+      return {
+        ...state,
+        cards: state.cards.reduce((ac, current) => {
+          if (current.id !== action.payload) {
+            return [...ac, current];
+          } else {
+            return ac;
+          }
+        }, []),
+      };
+
     default:
       return state;
   }

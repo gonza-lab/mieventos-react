@@ -2,9 +2,13 @@ import React from 'react';
 import Swal from 'sweetalert2';
 
 export const ListImagesEdit = ({ imagenes, id, setListImages }) => {
+  const handleDeleteImage = (imageToDelete) => {
+    setListImages((prevImages) => {
+      const images = prevImages.slice();
+      images.splice(prevImages.indexOf(imageToDelete, 1));
 
-  const handleDeleteImage = (idImage) => {
-    console.log(idImage);
+      return images;
+    });
   };
 
   const handleAddImage = async (e) => {

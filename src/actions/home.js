@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { db } from '../firebase/firebase-config';
 import { types } from '../types/types';
 
@@ -31,8 +32,41 @@ export const startAddCardFromHome = () => {
 };
 
 export const startSaveCardFromHome = (id, card) => {
+  return async () => {
+    const result = await Swal.fire({
+      title: 'Estas seguro?',
+      text: 'No vas a ser capaz de revertir este cambio!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, guardar!',
+    });
+
+    if (result.isConfirmed) {
+      await db.doc(`pantallas/home/tarjetas/${id}`).set(card);
+      Swal.fire('Guardado!', 'Tu tarjeta ha sido guardada', 'success');
+    }
+  };
+};
+
+export const startDeleteCardFromHome = (id) => {
   return async (dispatch) => {
-    await db.doc(`pantallas/home/tarjetas/${id}`).set(card);
+    const result = await Swal.fire({
+      title: 'Estas seguro?',
+      text: 'No vas a ser capaz de revertir este cambio!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, borrar!',
+    });
+
+    if (result.isConfirmed) {
+      await db.doc(`pantallas/home/tarjetas/${id}`).delete();
+      dispatch(deleteCardFromHome(id));
+      Swal.fire('Eliminado!', 'Tu tarjeta ha sido eliminada', 'success');
+    }
   };
 };
 
@@ -52,4 +86,9 @@ export const addCardFromHome = (newCard) => ({
 export const loadCardsFromHome = (cards) => ({
   type: types.homeGetCards,
   payload: cards,
+});
+
+export const deleteCardFromHome = (id) => ({
+  type: types.homeDeleteCard,
+  payload: id,
 });
