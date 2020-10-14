@@ -5,12 +5,13 @@
   display: flex;
 }
 
-.card-list{
+.card-list {
   background-color: white;
 }
 
 .card__info {
-  padding: 2em;
+  padding: 2em 0;
+  margin-right: 2em;
   width: 100%;
 
   h3 {
@@ -29,11 +30,13 @@
   width: 100%;
   height: 100%;
   background-color: wheat;
-  
-  img{
+
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .slider {
     box-shadow: 40px -40px 0 $primary-tpze;
   }
 }
@@ -41,23 +44,26 @@
 .card__reverse {
   .card__info {
     order: 2;
-    margin-left: 1em;
+    margin-left: 2em;
   }
   .card__img {
     order: 1;
     margin-left: 0em;
+    .slider {
+      box-shadow: -40px -40px 0 $primary-tpze;
+    }
   }
 }
 
-@media(max-width: 800px){
-  .card{
+@media (max-width: 800px) {
+  .card {
     flex-direction: column;
     height: auto;
     padding: 0 3em;
   }
   .card__img {
     height: 200px;
-    img{
+    .slider {
       box-shadow: 20px -20px 0 $primary-tpze;
     }
   }

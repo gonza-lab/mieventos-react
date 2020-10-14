@@ -16,7 +16,7 @@ export const AdminHome = () => {
   }, [dispatch]);
 
   const handleAddCard = () => {
-    dispatch(startAddCardFromHome());
+    dispatch(startAddCardFromHome(cards[cards.length - 1].posicion));
   };
 
   return (
@@ -25,7 +25,7 @@ export const AdminHome = () => {
       <h1>Admin Home</h1>
       <div className="admin-home__card-list">
         {cards.map((card) => (
-          <CardEdit key={card.id} {...card} />
+          <CardEdit key={card.id} {...card} max={cards.length} />
         ))}
       </div>
       <button onClick={handleAddCard}>

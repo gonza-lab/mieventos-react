@@ -4,7 +4,10 @@ import { types } from '../types/types';
 
 export const startGetCardsFromHome = () => {
   return async (dispatch) => {
-    const res = await db.collection('pantallas/home/tarjetas').get();
+    const res = await db
+      .collection('pantallas/home/tarjetas')
+      .orderBy('posicion', 'asc')
+      .get();
 
     const cards = [];
 
@@ -16,13 +19,14 @@ export const startGetCardsFromHome = () => {
   };
 };
 
-export const startAddCardFromHome = () => {
+export const startAddCardFromHome = (lastPosi) => {
   return async (dispatch) => {
     const newCard = await db.collection('pantallas/home/tarjetas').add({
       titulo: 'Modifique el titulo',
       informacion: 'Modifique la informacion',
       lado: 'derecho',
       imagenes: [],
+      posicion: lastPosi + 1,
     });
 
     const cardInfo = await newCard.get();

@@ -7,19 +7,48 @@ import {
 import { useForm } from '../../hooks/useForm';
 import { ListImagesEdit } from '../list-images/ListImagesEdit';
 
-export const CardEdit = ({ titulo, informacion, imagenes, lado, id }) => {
+export const CardEdit = ({
+  titulo,
+  informacion,
+  imagenes,
+  lado,
+  posicion,
+  id,
+  max,
+}) => {
   const dispatch = useDispatch();
-  const [values, handleInputChange] = useForm({ titulo, informacion, lado });
+  const [values, handleInputChange] = useForm({
+    titulo,
+    informacion,
+    lado,
+    posicion,
+  });
   const [listImages, setListImages] = useState(imagenes);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(startSaveCardFromHome(id, { ...values, imagenes: listImages }));
+    dispatch(
+      startSaveCardFromHome(id, {
+        ...values,
+        imagenes: listImages,
+        posicion: parseInt(values.posicion, 10),
+      })
+    );
   };
 
   const handleDeleteCard = () => {
     dispatch(startDeleteCardFromHome(id));
   };
+
+  const options = [];
+
+  for (let i = 0; i < max; i++) {
+    options.push(
+      <option key={i + 1} value={i + 1}>
+        {i + 1}
+      </option>
+    );
+  }
 
   return (
     <div className="card-edit">
@@ -66,6 +95,16 @@ export const CardEdit = ({ titulo, informacion, imagenes, lado, id }) => {
             />{' '}
             Izquierda
           </label>
+        </div>
+        <div className="card-edit__options">
+          <label htmlFor="posicion">Posicion:</label>
+          <select
+            value={values.posicion}
+            name="posicion"
+            onChange={handleInputChange}
+          >
+            {options}
+          </select>
         </div>
         <div className="card-edit__buttons">
           <button type="submit">Guardar</button>
