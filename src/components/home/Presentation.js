@@ -2,14 +2,13 @@ import React from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { Svg } from './Svg';
 
-export const Presentation = () => {
+export const Presentation = ({ mensaje, urlImagen }) => {
   return (
     <ParallaxBanner
       className="home-screen__presentation"
       layers={[
         {
-          image:
-            'https://images.unsplash.com/photo-1427477321886-abc24e8ce923?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+          image: urlImagen,
           amount: 0.3,
           props: {
             style: {
@@ -25,7 +24,7 @@ export const Presentation = () => {
       }}
     >
       <div className="home-screen__presentation-brand">
-        <h1>Miyara</h1>
+        <h1>{mensaje}</h1>
         <p>
           <span>——</span>E V E N T O S<span>——</span>
         </p>

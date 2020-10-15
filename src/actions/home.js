@@ -74,6 +74,33 @@ export const startDeleteCardFromHome = (id) => {
   };
 };
 
+export const startGetPresentationFromHome = () => {
+  return async (dispatch) => {
+    const res = await db.doc('pantallas/home').get();
+
+    dispatch(getPresentationFromHome(res.data()));
+  };
+};
+
+export const startSavePresentationFromHome = (presentation) => {
+  return async () => {
+    const result = await Swal.fire({
+      title: 'Estas seguro?',
+      text: 'No vas a ser capaz de revertir este cambio!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, guardar!',
+    });
+
+    if (result.isConfirmed) {
+      await db.doc(`pantallas/home`).set(presentation);
+      Swal.fire('Guardado!', 'Tu presentacion ha sido guardada', 'success');
+    }
+  };
+};
+
 export const addImageToCard = (id, image) => ({
   type: types.homeCardAddImage,
   payload: {
@@ -95,4 +122,9 @@ export const loadCardsFromHome = (cards) => ({
 export const deleteCardFromHome = (id) => ({
   type: types.homeDeleteCard,
   payload: id,
+});
+
+export const getPresentationFromHome = (presentation) => ({
+  type: types.homeGetPresentation,
+  payload: presentation,
 });

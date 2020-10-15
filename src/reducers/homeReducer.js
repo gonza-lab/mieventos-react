@@ -1,6 +1,9 @@
 import { types } from '../types/types';
 
-export const homeReducer = (state = { cards: [] }, action) => {
+export const homeReducer = (
+  state = { cards: [], presentation: { mensaje: '', urlImagen: '' } },
+  action
+) => {
   switch (action.type) {
     case types.homeGetCards:
       return {
@@ -34,6 +37,12 @@ export const homeReducer = (state = { cards: [] }, action) => {
             return ac;
           }
         }, []),
+      };
+
+    case types.homeGetPresentation:
+      return {
+        ...state,
+        presentation: action.payload,
       };
 
     default:
