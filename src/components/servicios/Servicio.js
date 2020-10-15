@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export const Servicio = () => {
+export const Servicio = ({ servicio, precio, horas }) => {
   return (
-    <div className="servicios-screen__servicio">
-      <p className="name">Cascada de cholate</p>
-      <p className="price">1hr $1000</p>
+    <div className="servicios-screen__servicio animate__animated animate__fadeInLeft">
+      <p className="name">{servicio}</p>
+      <p className="price">
+        {horas}hr ${precio}
+      </p>
       <button>+ Info</button>
     </div>
-  )
-}
+  );
+};

@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  startLoadCardsFromServicios,
+  startLoadPresentationFromServicios,
+} from '../../actions/servicios';
 import { Presentation } from '../presentation/Presentation';
 import { ServiciosList } from './ServiciosList';
 
 export const ServiciosScreen = () => {
+  const dispatch = useDispatch();
+  const { cards, presentation } = useSelector((state) => state.servicios);
+
+  useEffect(() => {
+    dispatch(startLoadCardsFromServicios());
+    dispatch(startLoadPresentationFromServicios());
+  }, [dispatch]);
+
   return (
     <div className="servicios-screen animate__animated animate__fadeIn">
       <Presentation
-        text="Convertimos tus sueños en realidad"
+        text={presentation.mensaje}
         alt=""
-        src="https://images.unsplash.com/photo-1524563216914-d552816e4d67?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+        src={presentation.urlImagen}
       />
-      <ServiciosList />
+      <ServiciosList cards={cards} />
     </div>
   );
 };

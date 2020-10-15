@@ -14,4 +14,6 @@ export const types = {
 
   serviciosGetCards: '[SERVICIOS] Load cards',
   serviciosAddCard: '[SERVICIOS] Add card',
+  serviciosDeleteCard: '[SERVICIOS] Delete card',
+  serviciosGetPresentation: '[SERVICIOS] Load presentation',
 };

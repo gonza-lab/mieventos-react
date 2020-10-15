@@ -1,14 +1,12 @@
 import React from 'react';
 import { Servicio } from './Servicio';
 
-export const ServiciosList = () => {
-  const servicios = [1, 2, 3, 4, 5];
-
+export const ServiciosList = ({ cards: servicios }) => {
   return (
     <div className="servicios-screen__servicios">
       {servicios.map((servicio) => (
         <>
-          <Servicio key={servicio} />
+          <Servicio key={servicio.id} {...servicio} />
         </>
       ))}
     </div>
