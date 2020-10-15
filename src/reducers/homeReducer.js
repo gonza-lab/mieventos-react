@@ -11,7 +11,7 @@ export const homeReducer = (state = { cards: [] }, action) => {
     case types.homeAddCard:
       return {
         ...state,
-        cards: [action.payload, ...state.cards],
+        cards: [...state.cards, action.payload],
       };
 
     case types.homeCardAddImage:

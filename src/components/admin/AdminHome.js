@@ -4,8 +4,7 @@ import {
   startAddCardFromHome,
   startGetCardsFromHome,
 } from '../../actions/home';
-import { CardEdit } from './CardEdit';
-// import { NavAdmin } from './NavAdmin';
+import { CardEditHome } from './CardEditHome';
 
 export const AdminHome = () => {
   const dispatch = useDispatch();
@@ -21,11 +20,10 @@ export const AdminHome = () => {
 
   return (
     <div className="admin-home">
-      {/* <NavAdmin screen="Home" /> */}
       <h1>Admin Home</h1>
       <div className="admin-home__card-list">
         {cards.map((card) => (
-          <CardEdit key={card.id} {...card} max={cards.length} />
+          <CardEditHome key={card.id} {...card} max={cards.length} />
         ))}
       </div>
       <button onClick={handleAddCard}>

@@ -10,5 +10,8 @@ export const types = {
   homeGetCards: '[HOME] Load cards',
   homeAddCard: '[HOME] Add card',
   homeSaveCard: '[HOME] Save card',
-  homeDeleteCard: '[HOME] Delete card'
+  homeDeleteCard: '[HOME] Delete card',
+
+  serviciosGetCards: '[SERVICIOS] Load cards',
+  serviciosAddCard: '[SERVICIOS] Add card',
 };

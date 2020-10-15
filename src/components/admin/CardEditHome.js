@@ -7,7 +7,7 @@ import {
 import { useForm } from '../../hooks/useForm';
 import { ListImagesEdit } from '../list-images/ListImagesEdit';
 
-export const CardEdit = ({
+export const CardEditHome = ({
   titulo,
   informacion,
   imagenes,
@@ -51,7 +51,7 @@ export const CardEdit = ({
   }
 
   return (
-    <div className="card-edit">
+    <div className="card-edit animate__animated animate__backInRight">
       <form onSubmit={handleSubmit}>
         <div className="card-edit__item">
           <label htmlFor="titulo">Titulo: </label>
