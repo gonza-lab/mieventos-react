@@ -12,7 +12,7 @@ export const Presentation = ({ mensaje, urlImagen }) => {
           amount: 0.3,
           props: {
             style: {
-              backgroundPositionY: 'bottom',
+              backgroundPosition: 'center bottom',
             },
           },
         },
