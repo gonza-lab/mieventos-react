@@ -1,0 +1,158 @@
+@import '../settings';
+
+.sidebar-admin {
+  color: white;
+  background-color: $primary-admin;
+  height: 100%;
+  transition: width 0.3s;
+  overflow-x: hidden;
+  padding: 0 1.2em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  > * {
+    border-bottom: 1px solid $primary-admin-lighten10;
+    padding: 1.2em 0;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  header {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+
+    i {
+      margin-right: 0.7rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      display: inline;
+      margin: 0;
+    }
+  }
+
+  .close-open-button {
+    display: flex;
+    justify-content: center;
+    i {
+      cursor: pointer;
+      border-radius: 100px;
+      background-color: $primary-admin-lighten10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 38px;
+      height: 38px;
+      transition: 0.3s background-color;
+
+      &:hover {
+        background-color: $primary-admin-lighten20;
+      }
+    }
+  }
+}
+
+.sidebar-admin__show {
+  width: 224px;
+}
+
+.sidebar-admin__hide {
+  width: 104px;
+
+  header {
+    i {
+      margin: 0;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  ul {
+    li {
+      a {
+        text-align: center;
+        p {
+          display: block;
+          font-size: 0.75rem;
+        }
+        i {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar-admin__show {
+    width: 104px;
+  }
+
+  .sidebar-admin__hide {
+    padding: 0;
+    width: 0px;
+    .close-open-button {
+      display: none;
+    }
+  }
+}
+
+.sidebar-admin__nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    > p {
+      margin: 0;
+      font-size: 0.65rem;
+      color: $primary-admin-lighten20;
+      font-weight: 800;
+      text-align: center;
+    }
+  }
+
+  li {
+    padding: 0.8em 0;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 300;
+
+      i {
+        margin-right: 0.6em;
+        color: $primary-admin-lighten10;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        i {
+          color: white;
+        }
+      }
+
+      p {
+        margin: 0;
+        display: inline;
+      }
+    }
+
+    .active {
+      font-weight: 600;
+      i {
+        color: white;
+      }
+    }
+  }
+}

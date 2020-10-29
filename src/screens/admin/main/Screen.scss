@@ -1,0 +1,7 @@
+.admin-screen {
+  display: flex;
+  height: 100%;
+  *:not(i) {
+    font-family: 'Nunito', sans-serif;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch/* , useSelector  */} from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import {
@@ -16,7 +16,7 @@ import { MiEventosRouter } from './MiEventosRouter';
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
-  const { presentation } = useSelector((state) => state.servicios);
+  // const { presentation } = useSelector((state) => state.servicios);
 
   useEffect(() => {
     dispatch(startGetCardsFromHome());
@@ -25,7 +25,7 @@ export const AppRouter = () => {
     dispatch(startLoadPresentationFromServicios());
   }, [dispatch]);
 
-  if (presentation.mensaje) {
+  if (true) {
     return (
       <Router>
         <Switch>
