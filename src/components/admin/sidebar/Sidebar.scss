@@ -1,7 +1,8 @@
 @import '../settings';
 
 .sidebar-admin {
-  color: white;
+  box-shadow: 0.15rem 0 1.75rem 0 rgba(31, 45, 65, 0.25);
+  color: $color-sidebar;
   background-color: $primary-admin;
   height: 100%;
   transition: width 0.3s;
@@ -95,6 +96,32 @@
 @media (max-width: 767px) {
   .sidebar-admin__show {
     width: 104px;
+
+    header {
+      i {
+        margin: 0;
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    ul {
+      li {
+        a {
+          text-align: center;
+          p {
+            display: block;
+            font-size: 0.75rem;
+          }
+          i {
+            width: 100%;
+            margin-right: 0;
+          }
+        }
+      }
+    }
   }
 
   .sidebar-admin__hide {
@@ -125,7 +152,7 @@
     padding: 0.8em 0;
 
     a {
-      color: white;
+      color: inherit;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 300;
@@ -138,7 +165,7 @@
 
       &:hover {
         i {
-          color: white;
+          color: inherit;
         }
       }
 
@@ -151,7 +178,7 @@
     .active {
       font-weight: 600;
       i {
-        color: white;
+        color: inherit;
       }
     }
   }

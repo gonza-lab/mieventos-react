@@ -1,3 +1,7 @@
-$primary-admin: rgb(66, 104, 214);
-$primary-admin-lighten10: lighten($primary-admin, 10%);
-$primary-admin-lighten20: lighten($primary-admin, 20%);
+// $primary-admin: rgb(66, 104, 214);
+$color-sidebar: rgb(66, 104, 214);
+$primary-admin: #fff;
+$primary-admin-lighten10: lighten($color-sidebar, 30%);
+$primary-admin-lighten20: lighten($color-sidebar, 20%);
+$primary-gray: rgba(255, 255, 255, 0.5);
+// $color-sidebar: white;

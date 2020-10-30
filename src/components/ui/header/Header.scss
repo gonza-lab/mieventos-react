@@ -1,0 +1,44 @@
+@import '../../admin/settings';
+
+.admin-header {
+  width: 100%;
+  max-width: none;
+  height: 259px;
+  display: flex;
+  justify-content: center;
+  // padding-top: 2em;
+  padding: 2em 1em 0 1em;
+  background: #396afc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2948ff,
+    #396afc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2948ff,
+    #396afc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  div {
+    max-width: 1392px;
+    width: 100%;
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: white;
+      margin: 0;
+
+      i {
+        margin-right: 0.5em;
+        font-size: 2rem;
+        color: $primary-gray;
+      }
+    }
+
+    p {
+      font-size: 1.15rem;
+      color: $primary-gray;
+      margin: 0;
+    }
+  }
+}
