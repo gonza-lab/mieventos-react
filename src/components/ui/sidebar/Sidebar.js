@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Sidebar.scss';
 
 export const SidebarAdmin = () => {
-  const [isShow, setIsShow] = useState('show');
+  const [isShow, setIsShow] = useState('hide');
 
   const handleClose = () => {
     setIsShow((prev) => (prev === 'show' ? 'hide' : 'show'));

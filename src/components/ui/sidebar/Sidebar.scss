@@ -1,11 +1,11 @@
-@import '../settings';
+@import '../../admin/settings';
 
 .sidebar-admin {
   box-shadow: 0.15rem 0 1.75rem 0 rgba(31, 45, 65, 0.25);
   color: $color-sidebar;
   background-color: $primary-admin;
   height: 100%;
-  transition: width 0.3s;
+  transition: width 0.3s ease-out;
   overflow-x: hidden;
   padding: 0 1.2em;
   display: flex;

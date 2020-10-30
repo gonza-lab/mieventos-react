@@ -1,0 +1,15 @@
+@import '../../admin/settings';
+
+.admin-card {
+  box-shadow: $shadow;
+  border-radius: 5px;
+  background-color: white;
+
+  > div:first-child {
+    color: $color-primary;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.9em;
+    border-bottom: 1px solid $primary-gray-darken;
+  }
+}

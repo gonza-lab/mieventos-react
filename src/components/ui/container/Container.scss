@@ -1,4 +1,4 @@
-.admin-container{
+.admin-container {
   display: flex;
   // justify-content: center;
   align-items: center;
@@ -7,6 +7,7 @@
   width: 100%;
 
   > * {
+    padding: 1em;
     max-width: 1392px;
     width: 100%;
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { SidebarAdmin } from '../../../components/admin/sidebar/Sidebar';
+import { SidebarAdmin } from '../../../components/ui/sidebar/Sidebar';
 import { AdminHome } from '../home/Home';
 import { AdminServicios } from '../servicios/Servicios';
 import './Screen.scss';

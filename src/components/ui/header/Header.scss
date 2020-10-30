@@ -6,7 +6,6 @@
   height: 259px;
   display: flex;
   justify-content: center;
-  // padding-top: 2em;
   padding: 2em 1em 0 1em;
   background: #396afc; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -40,5 +39,15 @@
       color: $primary-gray;
       margin: 0;
     }
+  }
+}
+
+.admin-header + * {
+  margin-top: -7em;
+}
+
+@media (max-width: 767px) {
+  .admin-header + * {
+    margin-top: -10em;
   }
 }

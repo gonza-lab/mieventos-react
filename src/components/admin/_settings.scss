@@ -1,7 +1,8 @@
-// $primary-admin: rgb(66, 104, 214);
+$color-primary: rgb(66, 104, 214);
 $color-sidebar: rgb(66, 104, 214);
 $primary-admin: #fff;
 $primary-admin-lighten10: lighten($color-sidebar, 30%);
 $primary-admin-lighten20: lighten($color-sidebar, 20%);
 $primary-gray: rgba(255, 255, 255, 0.5);
-// $color-sidebar: white;
+$primary-gray-darken: darken($primary-gray, 30%);
+$shadow: 0.15rem 0 1.75rem 0 rgba(31, 45, 65, 0.35);
