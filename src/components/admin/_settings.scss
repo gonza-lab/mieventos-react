@@ -7,3 +7,5 @@ $primary-gray: rgba(255, 255, 255, 0.5);
 $primary-gray-darken: darken($primary-gray, 30%);
 $shadow: 0.15rem 0 1.75rem 0 rgba(31, 45, 65, 0.35);
 $border-color-table: #e3e6ec;
+$border-color-table-darken: darken($border-color-table, 10%);
+$primary-red: rgb(232, 21, 0);

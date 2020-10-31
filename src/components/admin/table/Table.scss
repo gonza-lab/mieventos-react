@@ -1,13 +1,18 @@
 @import '../settings';
+
 .admin-table {
   padding: 1em;
+  overflow-y: auto;
 
-  * {
-    border: 2px solid $border-color-table;
-  }
   table {
     width: 100%;
     border-collapse: collapse;
+
+    th,
+    td {
+      padding: 12px;
+      border: 2px solid $border-color-table;
+    }
 
     thead {
       border-bottom-width: 3px;
@@ -15,12 +20,34 @@
 
       th {
         text-align: left;
+        &:last-child {
+          width: 90px;
+        }
       }
     }
 
-    th,
-    td {
-      padding: 12px;
+    tbody {
+      .cell-actions {
+        text-align: center;
+        i {
+          margin: 0 8px;
+          cursor: pointer;
+          color: $border-color-table-darken;
+          transition: color 0.3s;
+        }
+
+        .fa-pen:hover {
+          color: $color-primary;
+        }
+
+        .fa-trash-alt:hover {
+          color: $primary-red;
+        }
+      }
+    }
+
+    .cell-actions {
+      width: 90px;
     }
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.scss';
+import PropTypes from 'prop-types';
 
 export const AdminHeader = ({ title, subtitle, i }) => {
   return (
@@ -13,4 +14,10 @@ export const AdminHeader = ({ title, subtitle, i }) => {
       </div>
     </header>
   );
+};
+
+AdminHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  i: PropTypes.string,
 };

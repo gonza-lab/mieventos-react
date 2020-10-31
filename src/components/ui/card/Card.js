@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.scss';
+import PropTypes from 'prop-types';
 
 export const AdminCard = ({ title, children }) => {
   return (
@@ -10,4 +11,9 @@ export const AdminCard = ({ title, children }) => {
       </div>
     </div>
   );
+};
+
+AdminCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };

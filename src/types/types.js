@@ -6,6 +6,8 @@ export const types = {
   uiStartLoading: '[UI] Start Loading',
   uiStartGetUser: '[UI] Start getting user',
   uiFinishGetUser: '[UI] Finish getting user',
+  uiOpenModalAdmin: '[UI] Open modal admin',
+  uiCloseModalAdmin: '[UI] Close modal admin',
 
   homeGetCards: '[HOME] Load cards',
   homeAddCard: '[HOME] Add card',
@@ -17,4 +19,7 @@ export const types = {
   serviciosAddCard: '[SERVICIOS] Add card',
   serviciosDeleteCard: '[SERVICIOS] Delete card',
   serviciosGetPresentation: '[SERVICIOS] Load presentation',
+
+  adminSetActiveCard: '[ADMIN] Set active card',
+  adminClearActiveCard: '[ADMIN] Clear active card',
 };

@@ -15,3 +15,11 @@ export const startGetUser = () => ({
 export const finishGetUser = () => ({
   type: types.uiFinishGetUser,
 });
+
+export const openModalAdmin = () => ({
+  type: types.uiOpenModalAdmin,
+});
+
+export const closeModalAdmin = () => ({
+  type: types.uiCloseModalAdmin,
+});

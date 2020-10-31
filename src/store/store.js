@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
+import { adminReducer } from '../reducers/adminReducer';
 
 import { authReducer } from '../reducers/authReducer';
 import { homeReducer } from '../reducers/homeReducer';
@@ -16,6 +17,7 @@ const reducers = combineReducers({
   ui: uiReducer,
   home: homeReducer,
   servicios: serviciosReducer,
+  admin: adminReducer,
 });
 
 export const store = createStore(
