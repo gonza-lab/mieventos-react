@@ -7,8 +7,15 @@
   width: 100%;
 
   > * {
-    padding: 1em;
     max-width: 1392px;
     width: 100%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .admin-container {
+    > * {
+      padding: 1em;
+    }
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTable } from '../../../components/admin/table/Table';
 import { AdminCard } from '../../../components/ui/card/Card';
 import { AdminContainer } from '../../../components/ui/container/Container';
 import { AdminHeader } from '../../../components/ui/header/Header';
@@ -12,7 +13,9 @@ export const AdminHome = () => {
         i="fas fa-home"
       />
       <AdminCard title="Tabla">
-        <div style={{ height: '500px' }}></div>
+        <AdminTable
+          headers={['Titulo', 'Informacion', 'Lado', 'Posicion', 'Imagenes']}
+        />
       </AdminCard>
     </AdminContainer>
   );

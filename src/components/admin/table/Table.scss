@@ -1,0 +1,26 @@
+@import '../settings';
+.admin-table {
+  padding: 1em;
+
+  * {
+    border: 2px solid $border-color-table;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      border-bottom-width: 3px;
+      color: $color-primary;
+
+      th {
+        text-align: left;
+      }
+    }
+
+    th,
+    td {
+      padding: 12px;
+    }
+  }
+}
