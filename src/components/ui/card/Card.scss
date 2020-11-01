@@ -12,4 +12,7 @@
     padding: 0.9em;
     border-bottom: 1px solid $primary-gray-darken;
   }
+  > div:last-child {
+    padding: 1em;
+  }
 }

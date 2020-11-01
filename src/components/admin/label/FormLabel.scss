@@ -1,0 +1,23 @@
+@import '../settings';
+.admin-form-label {
+  label {
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0 0 8px 0;
+    display: block;
+    color: $color-form;
+    display: flex;
+    align-items: center;
+
+    > i {
+      margin-left: 5px;
+      cursor: pointer;
+      color: lighten($color-form, 30%);
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-form;
+      }
+    }
+  }
+}

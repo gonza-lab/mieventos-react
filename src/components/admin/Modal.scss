@@ -5,6 +5,10 @@
   bottom: 0;
   left: 0;
   display: none;
+
+  *:not(i) {
+    font-family: 'Nunito', sans-serif;
+  }
 }
 
 .ReactModal__Overlay {
@@ -23,4 +27,6 @@
 
 .ReactModal__Content {
   outline: none;
+  max-width: 705px;
+  width: 100%;
 }
