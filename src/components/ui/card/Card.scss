@@ -6,11 +6,39 @@
   background-color: white;
 
   > div:first-child {
+    position: relative;
     color: $color-primary;
     font-size: 1.2rem;
     font-weight: 600;
     padding: 0.9em;
     border-bottom: 1px solid $primary-gray-darken;
+
+    > i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1em;
+      background-color: $color-primary;
+      color: white;
+      border-radius: 500px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      outline: none;
+
+
+      &:hover {
+        background-color: darken($color-primary, 20%);
+      }
+
+      &:active{
+        box-shadow: 0 0 0 0.2rem lighten($color-primary, 20%);
+      }
+    }
   }
   > div:last-child {
     padding: 1em;

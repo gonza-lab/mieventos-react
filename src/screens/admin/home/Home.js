@@ -8,10 +8,12 @@ import { AdminCard } from '../../../components/ui/card/Card';
 import { AdminContainer } from '../../../components/ui/container/Container';
 import { AdminHeader } from '../../../components/ui/header/Header';
 import { AdminFormList } from '../../../components/admin/list/FormList';
+import { AdminFormLabel } from '../../../components/admin/label/FormLabel';
+import { AdminFormOption } from '../../../components/admin/option/FormOption';
 
 import './Home.scss';
 import '../../../components/admin/Modal.scss';
-import { AdminFormLabel } from '../../../components/admin/label/FormLabel';
+import '../../../components/admin/AdminForm.scss';
 
 Modal.setAppElement('#root');
 Modal.defaultStyles = {};
@@ -48,13 +50,20 @@ export const AdminHome = () => {
         }`}
         closeTimeoutMS={1000}
       >
-        <AdminCard className="admin-modal-card" title="Edit">
+        <AdminCard
+          i={{ icon: 'far fa-save', onClick: () => console.log('Hola mundo') }}
+          className="admin-modal-card"
+          title="Edit"
+        >
           <form>
             <AdminFormLabel htmlFor="title" text="Titulo">
               <input id="title" name="title" />
             </AdminFormLabel>
             <AdminFormLabel htmlFor="information" text="Informacion">
               <textarea id="information" name="information"></textarea>
+            </AdminFormLabel>
+            <AdminFormLabel text="Posicion">
+              <input type="number" min="1" />
             </AdminFormLabel>
             <AdminFormLabel
               text="Imagenes"
@@ -64,6 +73,17 @@ export const AdminHome = () => {
               }}
             >
               <AdminFormList list={['Hello', 'World', '!']} />
+            </AdminFormLabel>
+            <AdminFormLabel text="Lado">
+              <AdminFormOption
+                options={{
+                  values: ['Derecha', 'Izquierda'],
+                  group: 'side',
+                  onChange: function (e) {
+                    console.log(e.target);
+                  },
+                }}
+              />
             </AdminFormLabel>
           </form>
         </AdminCard>

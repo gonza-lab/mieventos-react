@@ -1,7 +1,7 @@
 import { types } from '../types/types';
 
 export const uiReducer = (
-  state = { isLoading: false, isGetting: true, isOpenModalAdmin: true },
+  state = { isLoading: false, isGetting: true, isOpenModalAdmin: false },
   action
 ) => {
   switch (action.type) {

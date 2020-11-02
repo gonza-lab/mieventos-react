@@ -25,32 +25,4 @@
     }
   }
 
-  .admin-form-label {
-    input,
-    select,
-    textarea {
-      width: 100%;
-      font-size: 1rem;
-      padding: 8px 16px;
-      border-radius: 0.35rem;
-      border: 1px solid $border-color-table-darken;
-      transition: border-color 0.3s;
-      outline: none;
-
-      &:focus {
-        border-color: $color-primary;
-        box-shadow: 0 0 0 0.0625rem $color-primary;
-      }
-    }
-
-    select{
-      padding: 0;
-      overflow-y: auto;
-      height: 95px;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-  }
 }

@@ -1,0 +1,12 @@
+.admin-form-option {
+  color: inherit;
+  > div {
+    display: flex;
+    margin: 4px 0;
+
+    > label {
+      margin-left: 4px;
+      color: inherit;
+    }
+  }
+}
