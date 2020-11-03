@@ -1,17 +1,20 @@
 import { types } from '../types/types';
 
-export const adminReducer = (state = { activeNote: null }, action) => {
+export const adminReducer = (
+  state = { activeCard: null, mode: 'Add' },
+  action
+) => {
   switch (action.type) {
     case types.adminSetActiveCard:
       return {
         ...state,
-        activeNote: action.payload,
+        activeCard: action.payload,
       };
 
-    case types.adminClearActiveCard:
+    case types.adminSetMode:
       return {
         ...state,
-        activeNote: null,
+        mode: action.payload,
       };
 
     default:

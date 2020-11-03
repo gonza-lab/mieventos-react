@@ -5,6 +5,7 @@ export const setActiveCard = (card) => ({
   payload: card,
 });
 
-export const clearActiveCard = () => ({
-  type: types.adminSetActiveCard,
+export const setMode = (mode) => ({
+  type: types.adminSetMode,
+  payload: mode,
 });

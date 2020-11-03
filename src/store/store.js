@@ -4,6 +4,7 @@ import { adminReducer } from '../reducers/adminReducer';
 
 import { authReducer } from '../reducers/authReducer';
 import { homeReducer } from '../reducers/homeReducer';
+import { screenReducer } from '../reducers/screenReducer';
 import { serviciosReducer } from '../reducers/serviciosReducer';
 import { uiReducer } from '../reducers/uiReducer';
 
@@ -17,6 +18,7 @@ const reducers = combineReducers({
   ui: uiReducer,
   home: homeReducer,
   servicios: serviciosReducer,
+  screen: screenReducer,
   admin: adminReducer,
 });
 

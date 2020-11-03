@@ -1,23 +1,24 @@
 import { types } from '../types/types';
 import { firebase } from '../firebase/firebase-config';
-import swal from 'sweetalert';
+import Swet from 'sweetalert2';
 import { finishLoading, startLoading } from './ui';
+import { fetchWithOutToken } from '../helpers/fetch';
 
-export const loginWithEmailAndPassword = ({ email, password }) => {
-  return (dispatch) => {
+export const loginWithEmailAndPassword = (user) => {
+  return async (dispatch) => {
     dispatch(startLoading());
 
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(({ user }) => {
-        dispatch(login(user.uid));
-        dispatch(finishLoading());
-      })
-      .catch(({ message }) => {
-        swal('Oops', message, 'error');
-        dispatch(finishLoading());
-      });
+    const res = await fetchWithOutToken('auth/login', 'POST', user);
+    const userDB = await res.json();
+
+    if (userDB.ok) {
+      dispatch(login(user.id));
+      localStorage.setItem('x-token', userDB.token);
+    } else {
+      Swet.fire('Oops..', userDB.msg, 'error');
+    }
+
+    dispatch(finishLoading());
   };
 };
 

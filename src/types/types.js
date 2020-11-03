@@ -9,6 +9,13 @@ export const types = {
   uiOpenModalAdmin: '[UI] Open modal admin',
   uiCloseModalAdmin: '[UI] Close modal admin',
 
+  screenGetScreens: '[SCREEN] Get Screens',
+  screenAddCard: '[SCREEN] Add Card',
+  screenSaveCard: '[SCREEN] Save Card',
+
+  adminSetActiveCard: '[SCREEN] Set Active Card',
+  adminSetMode: '[SCREEN] Set mode',
+
   homeGetCards: '[HOME] Load cards',
   homeAddCard: '[HOME] Add card',
   homeSaveCard: '[HOME] Save card',
@@ -19,7 +26,4 @@ export const types = {
   serviciosAddCard: '[SERVICIOS] Add card',
   serviciosDeleteCard: '[SERVICIOS] Delete card',
   serviciosGetPresentation: '[SERVICIOS] Load presentation',
-
-  adminSetActiveCard: '[ADMIN] Set active card',
-  adminClearActiveCard: '[ADMIN] Clear active card',
 };

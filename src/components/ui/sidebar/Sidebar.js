@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Sidebar.scss';
 
 export const SidebarAdmin = () => {
-  const [isShow, setIsShow] = useState('hide');
+  const [isShow, setIsShow] = useState('show');
 
   const handleClose = () => {
     setIsShow((prev) => (prev === 'show' ? 'hide' : 'show'));
@@ -61,6 +61,9 @@ export const SidebarAdmin = () => {
           onClick={handleClose}
           className={`fas fa-chevron-${isShow === 'show' ? 'left' : 'right'}`}
         ></i>
+      </div>
+      <div className={`close-open-button2 close-open-button2-not-${isShow}`}>
+        <i onClick={handleClose} className="fas fa-chevron-right"></i>
       </div>
     </aside>
   );

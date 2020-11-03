@@ -9,8 +9,16 @@
 
     th,
     td {
+      overflow: hidden;
       padding: 12px;
       border: 2px solid $border-color-table;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+
+    tr {
+      max-height: 26px;
     }
 
     thead {

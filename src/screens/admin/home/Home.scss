@@ -9,6 +9,11 @@
     width: 100px;
   }
 
+  .cell-informacion {
+    max-width: 600px;
+    width: 100%;
+  }
+
   .cell-titulo {
     width: 150px;
   }
@@ -24,5 +29,4 @@
       margin-top: 1em;
     }
   }
-
 }

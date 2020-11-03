@@ -1,7 +1,7 @@
 @import './settings';
 .admin-form-label {
   > input,
-  > select,
+  > .admin-form-list,
   > textarea {
     width: 100%;
     font-size: 1rem;
@@ -17,9 +17,26 @@
     }
   }
 
-  select {
+  > .admin-form-list {
     overflow-y: auto;
     height: 95px;
+    display: flex;
+    flex-direction: column;
+
+    > input {
+      border: none;
+      outline: none;
+      transition: all 0.2s;
+
+      &:focus {
+        background-color: $color-primary;
+        color: white;
+      }
+
+      &:read-only {
+        cursor: pointer;
+      }
+    }
   }
 
   textarea {

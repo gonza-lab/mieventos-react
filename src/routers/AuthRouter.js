@@ -4,39 +4,42 @@ import { Redirect, Switch } from 'react-router-dom';
 
 import { PrivateRoute } from './PrivateRoute';
 
-import { firebase } from '../firebase/firebase-config';
-
 import { login } from '../actions/auth';
 import { finishGetUser, startGetUser } from '../actions/ui';
 
-// import { Loader } from '../components/loader/Loader';
+import { Loader } from '../components/loader/Loader';
 import { PublicRoute } from './PublicRoute';
 import { LoginScreen } from '../components/auth/LoginScreen';
 import { AdminScreen } from '../screens/admin/main/Screen';
+import { fetchWithToken } from '../helpers/fetch';
 
 export const AuthRouter = () => {
-  const { auth/* , ui */ } = useSelector((state) => state);
+  const { auth, ui } = useSelector((state) => state);
 
   const { logged } = auth;
-  // const { isGetting } = ui;
+  const { isGetting } = ui;
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
+    async function fetchData() {
       dispatch(startGetUser());
+      const res = await fetchWithToken('auth/renew', 'GET');
+      const user = await res.json();
 
-      if (user) {
-        dispatch(login(user.uid));
+      if (user.ok) {
+        localStorage.setItem('x-token', user.token);
+        dispatch(login(user.id));
       }
-
       dispatch(finishGetUser());
-    });
+    }
+
+    fetchData();
   }, [dispatch]);
 
-  /* return isGetting ? (
+  return isGetting ? (
     <Loader size={30} />
-  ) : */ return (
+  ) : (
     <Switch>
       <PrivateRoute
         condition={logged}

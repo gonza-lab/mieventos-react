@@ -7,7 +7,12 @@ export const AdminCard = ({ title, children, className, i }) => {
     <div className={'admin-card-container ' + className}>
       <div className="admin-card">
         <div>
-          {title} {i && <i onClick={i.onClick} className={i.icon}></i>}
+          {title}
+          {i && (
+            <button onClick={i.onClick}>
+              <i className={i.icon}></i>
+            </button>
+          )}
         </div>
         <div>{children}</div>
       </div>
