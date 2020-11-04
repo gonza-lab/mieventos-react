@@ -3,6 +3,18 @@ import { fetchWithToken } from '../helpers/fetch';
 
 const { types } = require('../types/types');
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer);
+    toast.addEventListener('mouseleave', Swal.resumeTimer);
+  },
+});
+
 export const startGetScreens = () => {
   return async (dispatch) => {
     const res = await fetchWithToken('screen', 'GET');
@@ -21,6 +33,10 @@ export const startAddCard = ({ screenName, id }, card) => {
 
     if (ok) {
       dispatch(addCard({ ...rest, screenName }));
+      Toast.fire({
+        icon: 'success',
+        title: 'La tarjeta se ha añadido con exito!',
+      });
     } else {
       Swal.fire('Oops', 'Ha ocurrido un error al guardar la tarjeta.', 'error');
     }
@@ -34,6 +50,10 @@ export const startSaveCard = (screenName, card) => {
 
     if (ok) {
       dispatch(saveCard({ ...rest, screenName, _id: card._id }));
+      Toast.fire({
+        icon: 'success',
+        title: 'La tarjeta se a guardado con exito!',
+      });
     } else {
       Swal.fire('Oops', 'Ha ocurrido un error al guardar la tarjeta.', 'error');
     }
@@ -47,6 +67,10 @@ export const startDeleteCard = (screenName, _id) => {
 
     if (ok) {
       dispatch(deleteCard({ _id, screenName }));
+      Toast.fire({
+        icon: 'success',
+        title: 'La tarjeta se a eliminado con exito!',
+      });
     } else {
       Swal.fire(
         'Oops',

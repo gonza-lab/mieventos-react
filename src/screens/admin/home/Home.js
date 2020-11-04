@@ -12,8 +12,6 @@ import { AdminFormLabel } from '../../../components/admin/label/FormLabel';
 import { AdminFormOption } from '../../../components/admin/option/FormOption';
 
 import './Home.scss';
-import '../../../components/admin/Modal.scss';
-import '../../../components/admin/AdminForm.scss';
 import { toReactTableFormat } from '../../../helpers/toReactTableFormat';
 import { useForm } from '../../../hooks/useForm';
 import {
@@ -111,7 +109,6 @@ export const AdminHome = () => {
             onEdit={handleOpenModal}
             onDelete={handleDeleteCard}
             table={toReactTableFormat(formatTable, home.cards, 'Actions')}
-            headers={['Titulo', 'Informacion', 'Imagenes', 'Lado', 'Posicion']}
             className="admin-table-home"
           />
         </AdminCard>
@@ -139,6 +136,7 @@ export const AdminHome = () => {
                 name="title"
                 value={values.title}
                 onChange={handleInputChange}
+                required
               />
             </AdminFormLabel>
             <AdminFormLabel htmlFor="information" text="Informacion">
@@ -147,6 +145,7 @@ export const AdminHome = () => {
                 name="information"
                 value={values.information}
                 onChange={handleInputChange}
+                required
               ></textarea>
             </AdminFormLabel>
             <AdminFormLabel text="Posicion">
@@ -156,6 +155,7 @@ export const AdminHome = () => {
                 name="position"
                 value={values.position}
                 onChange={handleInputChange}
+                required
               />
             </AdminFormLabel>
             <AdminFormLabel

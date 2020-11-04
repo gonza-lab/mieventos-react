@@ -9,33 +9,27 @@ import {
 } from '../../../actions/screen';
 import { closeModalAdmin, openModalAdmin } from '../../../actions/ui';
 import { AdminFormLabel } from '../../../components/admin/label/FormLabel';
+import { AdminFormList } from '../../../components/admin/list/FormList';
 import { AdminTable } from '../../../components/admin/table/Table';
 import { AdminCard } from '../../../components/ui/card/Card';
 import { AdminContainer } from '../../../components/ui/container/Container';
 import { AdminHeader } from '../../../components/ui/header/Header';
 import { toReactTableFormat } from '../../../helpers/toReactTableFormat';
 import { useForm } from '../../../hooks/useForm';
-
-import './Servicios.scss';
+import './Galeria.scss';
 
 const formatTable = {
-  title: 'Servicio',
-  hours: 'Horas',
-  price: 'Precio',
-  position: 'Posicion',
+  image: 'URL',
 };
 
-export const AdminServicios = () => {
+export const AdminGaleria = () => {
   const [values, handleInputChange, reset] = useForm({
-    title: '',
-    hours: 1,
-    price: 1,
-    position: 1,
+    image: '',
   });
 
   const { isOpenModalAdmin } = useSelector((state) => state.ui);
   const { activeCard, mode } = useSelector((state) => state.admin);
-  const { servicios } = useSelector((state) => state.screen);
+  const { galeria } = useSelector((state) => state.screen);
 
   const dispatch = useDispatch();
 
@@ -46,9 +40,9 @@ export const AdminServicios = () => {
 
   const handleOpenModal = (index) => {
     if (Number.isInteger(index)) {
-      const { __v, _id, screen, ...rest } = servicios.cards[index];
+      const { __v, _id, screen, ...rest } = galeria.cards[index];
       dispatch(setMode('Edit'));
-      dispatch(setActiveCard(servicios.cards[index]));
+      dispatch(setActiveCard(galeria.cards[index]));
       reset(rest);
     } else {
       dispatch(setMode('Add'));
@@ -63,7 +57,7 @@ export const AdminServicios = () => {
     switch (mode) {
       case 'Edit':
         dispatch(
-          startSaveCard('servicios', {
+          startSaveCard('galeria', {
             ...activeCard,
             ...values,
           })
@@ -72,7 +66,7 @@ export const AdminServicios = () => {
 
       case 'Add':
         dispatch(
-          startAddCard({ screenName: 'servicios', id: servicios._id }, values)
+          startAddCard({ screenName: 'galeria', id: galeria._id }, values)
         );
         break;
 
@@ -82,28 +76,27 @@ export const AdminServicios = () => {
 
     handleCloseModal();
   };
-  
-  const handleDeleteCard = (index) => {
-    dispatch(startDeleteCard('servicios', servicios.cards[index]._id));
-  };
 
+  const handleDeleteCard = (index) => {
+    dispatch(startDeleteCard('galeria', galeria.cards[index]._id));
+  };
   return (
     <AdminContainer>
       <AdminHeader
-        title="Servicios"
-        subtitle="En esta seccion podras modificar el contenido de tu pantalla servicios."
-        i="fas fa-concierge-bell"
+        title="Galeria"
+        subtitle="En esta seccion podras modificar el contenido de tu pantalla galeria."
+        i="fas fa-images"
       />
-      {servicios && (
+      {galeria && (
         <AdminCard
-          title="Tabla"
+          title="Imagenes"
           i={{ icon: 'fas fa-plus', onClick: () => handleOpenModal() }}
         >
           <AdminTable
             onEdit={handleOpenModal}
             onDelete={handleDeleteCard}
-            table={toReactTableFormat(formatTable, servicios.cards, 'Actions')}
-            className="admin-table-servicios"
+            table={toReactTableFormat(formatTable, galeria.cards, 'Actions')}
+            className="admin-table-home"
           />
         </AdminCard>
       )}
@@ -126,38 +119,9 @@ export const AdminServicios = () => {
           <form>
             <AdminFormLabel htmlFor="title" text="Titulo">
               <input
-                id="title"
-                name="title"
-                value={values.title}
-                onChange={handleInputChange}
-                required
-              />
-            </AdminFormLabel>
-            <AdminFormLabel htmlFor="hours" text="Horas">
-              <input
-                id="hours"
-                name="hours"
-                value={values.hours}
-                type="number"
-                onChange={handleInputChange}
-              />
-            </AdminFormLabel>
-            <AdminFormLabel text="Posicion">
-              <input
-                type="number"
-                min="1"
-                name="position"
-                value={values.position}
-                onChange={handleInputChange}
-                required
-              />
-            </AdminFormLabel>
-            <AdminFormLabel text="Precio">
-              <input
-                type="number"
-                min="1"
-                name="price"
-                value={values.price}
+                id="image"
+                name="image"
+                value={values.image}
                 onChange={handleInputChange}
                 required
               />

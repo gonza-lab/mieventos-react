@@ -58,8 +58,10 @@ export const AdminTable = ({ className, table, onEdit, onDelete }) => {
                             className="far fa-trash-alt"
                           ></i>
                         </>
+                      ) : cell.value.length > 40 ? (
+                        `${cell.value.substr(0, 40)}...`
                       ) : (
-                        cell.render('Cell')
+                        cell.value
                       )}
                     </td>
                   );

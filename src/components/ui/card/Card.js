@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 
 export const AdminCard = ({ title, children, className, i }) => {
   return (
-    <div className={'admin-card-container ' + className}>
+    <div
+      className={
+        'admin-card-container animate__animated animate__fadeIn ' + className
+      }
+    >
       <div className="admin-card">
         <div>
           {title}

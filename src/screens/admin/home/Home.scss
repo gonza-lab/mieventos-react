@@ -19,14 +19,3 @@
   }
 }
 
-.admin-modal-card {
-  form {
-    border-radius: 0.35rem;
-    border: 0.25rem solid $border-color-table;
-    padding: 2em;
-
-    > * + * {
-      margin-top: 1em;
-    }
-  }
-}
