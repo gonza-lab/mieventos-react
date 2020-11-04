@@ -37,6 +37,19 @@ export const screenReducer = (state = {}, action) => {
         },
       };
 
+    case types.screenDeleteCard:
+      return {
+        ...state,
+        [screen]: {
+          ...state[screen],
+          cards: state[screen].cards.reduce(
+            (acu, curr) =>
+              curr._id === newCard._id ? [...acu] : [...acu, curr],
+            []
+          ),
+        },
+      };
+
     default:
       return state;
   }

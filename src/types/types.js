@@ -12,6 +12,7 @@ export const types = {
   screenGetScreens: '[SCREEN] Get Screens',
   screenAddCard: '[SCREEN] Add Card',
   screenSaveCard: '[SCREEN] Save Card',
+  screenDeleteCard: '[SCREEN] Delete Card',
 
   adminSetActiveCard: '[SCREEN] Set Active Card',
   adminSetMode: '[SCREEN] Set mode',

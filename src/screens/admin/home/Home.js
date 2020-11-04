@@ -16,7 +16,11 @@ import '../../../components/admin/Modal.scss';
 import '../../../components/admin/AdminForm.scss';
 import { toReactTableFormat } from '../../../helpers/toReactTableFormat';
 import { useForm } from '../../../hooks/useForm';
-import { startAddCard, startSaveCard } from '../../../actions/screen';
+import {
+  startAddCard,
+  startDeleteCard,
+  startSaveCard,
+} from '../../../actions/screen';
 import { setActiveCard, setMode } from '../../../actions/admin';
 
 Modal.setAppElement('#root');
@@ -87,6 +91,10 @@ export const AdminHome = () => {
     handleCloseModal();
   };
 
+  const handleDeleteCard = (index) => {
+    dispatch(startDeleteCard('home', home.cards[index]._id));
+  };
+
   return (
     <AdminContainer>
       <AdminHeader
@@ -101,6 +109,7 @@ export const AdminHome = () => {
         >
           <AdminTable
             onEdit={handleOpenModal}
+            onDelete={handleDeleteCard}
             table={toReactTableFormat(formatTable, home.cards, 'Actions')}
             headers={['Titulo', 'Informacion', 'Imagenes', 'Lado', 'Posicion']}
             className="admin-table-home"

@@ -40,6 +40,23 @@ export const startSaveCard = (screenName, card) => {
   };
 };
 
+export const startDeleteCard = (screenName, _id) => {
+  return async (dispatch) => {
+    const res = await fetchWithToken('card', 'DELETE', { _id });
+    const { ok } = await res.json();
+
+    if (ok) {
+      dispatch(deleteCard({ _id, screenName }));
+    } else {
+      Swal.fire(
+        'Oops',
+        'Ha ocurrido un error al eliminar la tarjeta.',
+        'error'
+      );
+    }
+  };
+};
+
 const getScreens = (screens) => ({
   type: types.screenGetScreens,
   payload: screens,
@@ -52,5 +69,10 @@ const addCard = (card) => ({
 
 const saveCard = (card) => ({
   type: types.screenSaveCard,
+  payload: card,
+});
+
+const deleteCard = (card) => ({
+  type: types.screenDeleteCard,
   payload: card,
 });

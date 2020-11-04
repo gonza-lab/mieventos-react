@@ -12,8 +12,8 @@ export const loginWithEmailAndPassword = (user) => {
     const userDB = await res.json();
 
     if (userDB.ok) {
-      dispatch(login(user.id));
       localStorage.setItem('x-token', userDB.token);
+      dispatch(login(user.id));
     } else {
       Swet.fire('Oops..', userDB.msg, 'error');
     }

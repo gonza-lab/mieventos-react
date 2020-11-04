@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import './Table.scss';
 
-export const AdminTable = ({ className, table, onEdit }) => {
+export const AdminTable = ({ className, table, onEdit, onDelete }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -53,7 +53,10 @@ export const AdminTable = ({ className, table, onEdit }) => {
                             onClick={() => onEdit(cell.row.index)}
                             className="fas fa-pen"
                           ></i>
-                          <i className="far fa-trash-alt"></i>
+                          <i
+                            onClick={() => onDelete(cell.row.index)}
+                            className="far fa-trash-alt"
+                          ></i>
                         </>
                       ) : (
                         cell.render('Cell')
@@ -72,4 +75,10 @@ export const AdminTable = ({ className, table, onEdit }) => {
 
 AdminTable.propTypes = {
   className: PropTypes.string,
+  table: PropTypes.shape({
+    columns: PropTypes.arrayOf(PropTypes.object).isRequired,
+    data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }).isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
