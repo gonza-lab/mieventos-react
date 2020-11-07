@@ -60,11 +60,28 @@
     flex-direction: column;
     height: auto;
     padding: 0 3em;
+    .card__info{
+      margin: 0;
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
   }
   .card__img {
     height: 200px;
     .slider {
       box-shadow: 20px -20px 0 $primary-tpze;
+    }
+  }
+
+  .card__reverse {
+    .card__info {
+      order: 1;
+    }
+    .card__img {
+      order: 2;
+      .slider {
+        box-shadow: 20px -20px 0 $primary-tpze;
+      }
     }
   }
 }

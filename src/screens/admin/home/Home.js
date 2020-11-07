@@ -102,7 +102,7 @@ export const AdminHome = () => {
       />
       {home && (
         <AdminCard
-          title="Tabla"
+          title="Cards"
           i={{ icon: 'fas fa-plus', onClick: () => handleOpenModal() }}
         >
           <AdminTable

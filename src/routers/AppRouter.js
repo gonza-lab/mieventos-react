@@ -1,31 +1,21 @@
 import React, { useEffect } from 'react';
-import { useDispatch/* , useSelector  */} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
-import {
-  startGetCardsFromHome,
-  startGetPresentationFromHome,
-} from '../actions/home';
-import {
-  startLoadCardsFromServicios,
-  startLoadPresentationFromServicios,
-} from '../actions/servicios';
 
 import { AuthRouter } from './AuthRouter';
 import { MiEventosRouter } from './MiEventosRouter';
+import { startGetScreens } from '../actions/screen';
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
-  // const { presentation } = useSelector((state) => state.servicios);
+  const { screen } = useSelector((state) => state);
 
   useEffect(() => {
-    dispatch(startGetCardsFromHome());
-    dispatch(startGetPresentationFromHome());
-    dispatch(startLoadCardsFromServicios());
-    dispatch(startLoadPresentationFromServicios());
+    dispatch(startGetScreens());
   }, [dispatch]);
 
-  if (true) {
+  if (screen.home) {
     return (
       <Router>
         <Switch>

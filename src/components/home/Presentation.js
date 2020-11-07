@@ -2,7 +2,10 @@ import React from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { Svg } from './Svg';
 
-export const Presentation = ({ mensaje, urlImagen }) => {
+export const Presentation = ({
+  mensaje = 'MiEventos',
+  urlImagen = 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+}) => {
   return (
     <ParallaxBanner
       className="home-screen__presentation"

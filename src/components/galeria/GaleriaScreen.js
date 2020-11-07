@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import { toGalleryCarrouselFormat } from '../../helpers/toGalleryCarrouselFormat';
 import { GalleryCarrousel } from './GalleryCarrousel';
-import { photos } from './photos';
 
 export const GaleriaScreen = () => {
+  const { cards } = useSelector((state) => state.screen.galeria);
+
   return (
     <div className="galeria-screen animate__animated animate__fadeIn">
       <ParallaxBanner
@@ -26,7 +29,7 @@ export const GaleriaScreen = () => {
         }}
       />
       <div className="galeria-screen__galery-container">
-        <GalleryCarrousel photos={photos} />
+        <GalleryCarrousel photos={toGalleryCarrouselFormat(cards)} />
       </div>
     </div>
   );

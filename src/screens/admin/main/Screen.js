@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { startGetScreens } from '../../../actions/screen';
 import { SidebarAdmin } from '../../../components/ui/sidebar/Sidebar';
 import { AdminHome } from '../home/Home';
 import { AdminServicios } from '../servicios/Servicios';
@@ -12,11 +10,6 @@ import '../../../components/admin/AdminForm.scss';
 import { AdminGaleria } from '../galeria/Galeria';
 
 export const AdminScreen = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(startGetScreens());
-  }, [dispatch]);
 
   return (
     <div className="admin-screen">

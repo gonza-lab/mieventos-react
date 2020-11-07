@@ -25,3 +25,6 @@ yarn-error.log*
 apikey.js
 
 debug.log
+
+.env.development
+.env.production

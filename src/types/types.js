@@ -16,15 +16,4 @@ export const types = {
 
   adminSetActiveCard: '[SCREEN] Set Active Card',
   adminSetMode: '[SCREEN] Set mode',
-
-  homeGetCards: '[HOME] Load cards',
-  homeAddCard: '[HOME] Add card',
-  homeSaveCard: '[HOME] Save card',
-  homeDeleteCard: '[HOME] Delete card',
-  homeGetPresentation: '[HOME] Load presentation',
-
-  serviciosGetCards: '[SERVICIOS] Load cards',
-  serviciosAddCard: '[SERVICIOS] Add card',
-  serviciosDeleteCard: '[SERVICIOS] Delete card',
-  serviciosGetPresentation: '[SERVICIOS] Load presentation',
 };

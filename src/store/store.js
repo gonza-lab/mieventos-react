@@ -3,9 +3,7 @@ import thunk from 'redux-thunk';
 import { adminReducer } from '../reducers/adminReducer';
 
 import { authReducer } from '../reducers/authReducer';
-import { homeReducer } from '../reducers/homeReducer';
 import { screenReducer } from '../reducers/screenReducer';
-import { serviciosReducer } from '../reducers/serviciosReducer';
 import { uiReducer } from '../reducers/uiReducer';
 
 const composeEnhancers =
@@ -16,8 +14,6 @@ const composeEnhancers =
 const reducers = combineReducers({
   auth: authReducer,
   ui: uiReducer,
-  home: homeReducer,
-  servicios: serviciosReducer,
   screen: screenReducer,
   admin: adminReducer,
 });

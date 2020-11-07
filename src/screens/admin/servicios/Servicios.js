@@ -96,7 +96,7 @@ export const AdminServicios = () => {
       />
       {servicios && (
         <AdminCard
-          title="Tabla"
+          title="Servicios"
           i={{ icon: 'fas fa-plus', onClick: () => handleOpenModal() }}
         >
           <AdminTable

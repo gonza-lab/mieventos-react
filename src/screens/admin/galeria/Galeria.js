@@ -9,7 +9,6 @@ import {
 } from '../../../actions/screen';
 import { closeModalAdmin, openModalAdmin } from '../../../actions/ui';
 import { AdminFormLabel } from '../../../components/admin/label/FormLabel';
-import { AdminFormList } from '../../../components/admin/list/FormList';
 import { AdminTable } from '../../../components/admin/table/Table';
 import { AdminCard } from '../../../components/ui/card/Card';
 import { AdminContainer } from '../../../components/ui/container/Container';
@@ -117,7 +116,7 @@ export const AdminGaleria = () => {
           title={`${mode} card`}
         >
           <form>
-            <AdminFormLabel htmlFor="title" text="Titulo">
+            <AdminFormLabel htmlFor="image" text="URL">
               <input
                 id="image"
                 name="image"
