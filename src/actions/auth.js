@@ -1,5 +1,4 @@
 import { types } from '../types/types';
-import { firebase } from '../firebase/firebase-config';
 import Swet from 'sweetalert2';
 import { finishLoading, startLoading } from './ui';
 import { fetchWithOutToken } from '../helpers/fetch';
@@ -19,13 +18,6 @@ export const loginWithEmailAndPassword = (user) => {
     }
 
     dispatch(finishLoading());
-  };
-};
-
-export const startLogOut = () => {
-  return async (dispatch) => {
-    await firebase.auth().signOut();
-    dispatch(logout());
   };
 };
 

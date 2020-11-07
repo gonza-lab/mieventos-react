@@ -44,16 +44,6 @@ export const SidebarAdmin = () => {
               <p>Galeria</p>
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              exact
-              activeClassName="active"
-              to="/admin/dashboard/contacto"
-            >
-              <i className="fas fa-file-signature"></i>
-              <p>Contacto</p>
-            </NavLink>
-          </li>
         </ul>
       </nav>
       <div className="close-open-button">

@@ -12,3 +12,4 @@ Lista de las tecnologias con las que trabaje:
 
 ## Futuro
 Tengo pensado hacer un backend para que el frontend haga una peticio en ese lugar, debido a que en este momento todo vive en el front.
+
